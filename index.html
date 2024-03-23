@@ -21,6 +21,23 @@
 
   </form>
   <button>je</button>
-  <script src="main.js"></script>
+  <img src="" alt="" id="img" >
+  <script >
+     async function fetchuse(){
+      document.getElementById("img")
+ const r =  await fetch("https://jsonplaceholder.typicode.com/photos")
+
+ if(r.ok ===true){
+  return  await r.json().then(data =>{
+    img.src= data[0].url
+  })
+ }
+ throw new Error("on ne peut pas parle au server")
+    }
+    fetchuse()
+ 
+
+
+  </script>
 </body>
 </html>
